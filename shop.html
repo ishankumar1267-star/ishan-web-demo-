@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacred Shop | Jyotish Kavach Vedic Products</title>
+  <meta name="description" content="Shop 100% lab certified Kavach, authentic Nepal & Indonesian Rudrakshas, energized Yantras, and natural astrologer-recommended gemstones.">
+  <link rel="icon" type="image/png" href="uploads/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="announcement-inner">
+        <div class="announcement-left">
+          <span class="announcement-badge">SPECIAL OFFER</span>
+          <span>✨ 100% Lab Certified & Energized Products | Free Shipping on orders over ₹999 | Use Code: <strong>KAVACH10</strong></span>
+        </div>
+        <div class="announcement-right">
+          <a href="tel:+919876543210" class="announcement-link">
+            <i data-lucide="phone" style="width:14px;height:14px;"></i> +91 98765 43210
+          </a>
+          <a href="mailto:support@jyotishkavach.in" class="announcement-link">
+            <i data-lucide="mail" style="width:14px;height:14px;"></i> support@jyotishkavach.in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header-wrapper">
+    <div class="header-top-row">
+      <div class="container">
+        <div class="header-top-inner">
+          <a href="index.html" class="site-logo">
+            <div class="logo-badge">
+              <img src="uploads/logo.png" alt="Jyotish Kavach">
+            </div>
+            <div class="logo-text-group">
+              <span class="logo-title">Jyotish Kavach</span>
+              <span class="logo-subtitle">Your Destiny, Your Kavach</span>
+            </div>
+          </a>
+
+          <div class="search-pill-container">
+            <select class="search-category-select" id="headerCategorySelect">
+              <option value="all">All Categories</option>
+              <option value="kavach">Sacred Kavach</option>
+              <option value="rudraksha">Rudraksha</option>
+              <option value="yantra">Energized Yantras</option>
+              <option value="gemstone">Gemstones</option>
+              <option value="puja">Puja Items</option>
+              <option value="books">Astrology Books</option>
+            </select>
+            <input type="text" class="search-input" id="headerSearchInput" placeholder="Search Kavach, Rudraksha, Yantra, Gemstones...">
+            <button class="search-btn" id="headerSearchBtn" type="button">
+              <i data-lucide="search" style="width:18px;height:18px;"></i>
+            </button>
+          </div>
+
+          <div class="header-actions">
+            <a href="login.html" class="btn-header-pill btn-login-pill" id="userAccountBtn">
+              <i data-lucide="user" style="width:17px;height:17px;"></i>
+              <span id="accountBtnText">Login</span>
+            </a>
+            <a href="shop.html?view=wishlist" class="btn-wishlist-pill" id="wishlistBtn" title="Wishlist">
+              <i data-lucide="heart" style="width:19px;height:19px;"></i>
+              <span class="wishlist-count" id="wishlistCount">0</span>
+            </a>
+            <a href="cart.html" class="btn-cart-pill" id="cartBtn" title="View Cart">
+              <i data-lucide="shopping-bag" style="width:19px;height:19px;"></i>
+              <span class="cart-count" id="cartCount">0</span>
+            </a>
+            <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation">
+              <i data-lucide="menu" style="width:26px;height:26px;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="header-nav-row" id="stickyNav">
+      <div class="container">
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html" class="nav-item-link">Home</a><a href="about.html" class="nav-item-link">About Us</a>
+          <a href="shop.html" class="nav-item-link">Shop Collection <span class="nav-badge-hot">NEW</span></a>
+          <a href="shop.html?cat=kavach" class="nav-item-link">Sacred Kavach</a>
+          <a href="shop.html?cat=rudraksha" class="nav-item-link">Rudraksha</a>
+          <a href="shop.html?cat=yantra" class="nav-item-link">Yantras</a>
+          <a href="services.html" class="nav-item-link">Vedic Consultations</a>
+          <a href="blog.html" class="nav-item-link">Jyotish Blog</a>
+          <a href="contact.html" class="nav-item-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header Breadcrumb -->
+  <div style="background:var(--color-cream);padding:24px 0;border-bottom:1px solid var(--color-border);">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <h1 style="font-family:var(--font-heading);font-size:1.8rem;color:var(--color-primary);margin-bottom:4px;">Sacred Vedic Catalog</h1>
+          <p style="font-size:0.88rem;color:var(--color-text-mid);">Home / Shop / <span style="color:var(--color-gold-dark);font-weight:600;" id="currentCategoryBreadcrumb">All Remedies</span></p>
+        </div>
+        <div>
+          <span style="font-size:0.86rem;color:var(--color-text-muted);">Showing <strong id="productCountLabel">12</strong> authentic products</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shop Content Layout -->
+  <div class="container" style="padding-bottom:70px;">
+    <div class="shop-layout">
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar">
+        <div class="filter-group">
+          <h3 class="filter-title">Categories</h3>
+          <label class="filter-label">
+            <input type="radio" name="catFilter" value="all" checked onchange="filterCategory('all')"> All Products
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="catFilter" value="kavach" onchange="filterCategory('kavach')"> Sacred Kavach (18)
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="catFilter" value="rudraksha" onchange="filterCategory('rudraksha')"> Certified Rudraksha (15)
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="catFilter" value="yantra" onchange="filterCategory('yantra')"> Energized Yantras (12)
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="catFilter" value="gemstone" onchange="filterCategory('gemstone')"> Astrological Ratnas (9)
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="catFilter" value="puja" onchange="filterCategory('puja')"> Vedic Puja Samagri (8)
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="catFilter" value="books" onchange="filterCategory('books')"> Jyotish Shastras (6)
+          </label>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Filter by Price</h3>
+          <label class="filter-label">
+            <input type="radio" name="priceFilter" value="all" checked onchange="filterPrice('all')"> All Prices
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="priceFilter" value="under-1000" onchange="filterPrice('under-1000')"> Under ₹1,000
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="priceFilter" value="1000-2500" onchange="filterPrice('1000-2500')"> ₹1,000 to ₹2,500
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="priceFilter" value="above-2500" onchange="filterPrice('above-2500')"> Above ₹2,500
+          </label>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Sacred Benefits</h3>
+          <label class="filter-label"><input type="checkbox"> Protection from Evil Eye</label>
+          <label class="filter-label"><input type="checkbox"> Wealth &amp; Prosperity</label>
+          <label class="filter-label"><input type="checkbox"> Career Growth &amp; Job</label>
+          <label class="filter-label"><input type="checkbox"> Health &amp; Healing</label>
+          <label class="filter-label"><input type="checkbox"> Marriage &amp; Harmony</label>
+        </div>
+
+        <div style="background:var(--color-cream);padding:18px;border-radius:var(--radius-sm);border:1px dashed var(--color-gold);text-align:center;">
+          <div style="font-size:1.8rem;margin-bottom:6px;">🕉️</div>
+          <strong style="color:var(--color-primary);font-size:0.9rem;display:block;">100% Pran Pratishtha</strong>
+          <p style="font-size:0.78rem;color:var(--color-text-mid);margin-top:4px;">Every order is energized with your Name &amp; Gotra prior to dispatch.</p>
+        </div>
+      </aside>
+
+      <!-- Main Product Grid -->
+      <main>
+        <!-- Sort Bar -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;background:#fff;padding:12px 18px;border:1px solid var(--color-border);border-radius:var(--radius-sm);">
+          <div>
+            <span style="font-size:0.86rem;color:var(--color-text-mid);">Sort by:</span>
+            <select id="sortSelect" onchange="sortProducts(this.value)" style="border:1px solid var(--color-border);border-radius:var(--radius-xs);padding:6px 12px;font-size:0.86rem;margin-left:8px;outline:none;">
+              <option value="featured">Most Popular / Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Devotee Rating</option>
+            </select>
+          </div>
+          <div>
+            <span style="font-size:0.82rem;background:var(--color-green-light);color:var(--color-green);padding:4px 10px;border-radius:var(--radius-pill);font-weight:700;">
+              ✓ All Items In Stock
+            </span>
+          </div>
+        </div>
+
+        <div class="product-grid" id="shopProductsGrid">
+          <!-- Product 1 -->
+          <div class="product-card" data-category="kavach" data-price="799" data-rating="4.9" data-product-id="1">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-bestseller">Bestseller</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(1, 'Surya Kavach Protective Yantra Amulet')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=1" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500&auto=format&fit=crop&q=80" alt="Surya Kavach">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Sacred Kavach</span>
+              <h3 class="product-title"><a href="product.html?id=1">Surya Kavach Protective Yantra Amulet</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(142)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹799</span>
+                <span class="price-original">₹1,200</span>
+                <span class="discount-tag">33% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(1, 'Surya Kavach Protective Yantra Amulet', 799, 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card" data-category="rudraksha" data-price="1499" data-rating="4.8" data-product-id="2">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-new">Vedic Energized</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(2, 'Authentic 5 Mukhi Indonesian Rudraksha Mala')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=2" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop&q=80" alt="5 Mukhi Rudraksha">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Rudraksha</span>
+              <h3 class="product-title"><a href="product.html?id=2">Authentic 5 Mukhi Indonesian Rudraksha Mala</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(289)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹1,499</span>
+                <span class="price-original">₹2,200</span>
+                <span class="discount-tag">32% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(2, 'Authentic 5 Mukhi Indonesian Rudraksha Mala', 1499, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card" data-category="yantra" data-price="999" data-rating="4.7" data-product-id="3">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-sale">Popular</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(3, 'Shree Yantra Pure Copper Heavy Plate')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=3" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop&q=80" alt="Shree Yantra">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Energized Yantras</span>
+              <h3 class="product-title"><a href="product.html?id=3">Shree Yantra Pure Copper Heavy Plate (3x3)</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(94)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹999</span>
+                <span class="price-original">₹1,500</span>
+                <span class="discount-tag">33% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(3, 'Shree Yantra Pure Copper Heavy Plate', 999, 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card" data-category="gemstone" data-price="4999" data-rating="4.9" data-product-id="4">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-premium">Lab Certified</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(4, 'Natural Ceylon Blue Sapphire Ring')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=4" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=80" alt="Blue Sapphire Ring">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Gemstones</span>
+              <h3 class="product-title"><a href="product.html?id=4">Natural Ceylon Blue Sapphire (Neelam) Ring</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(57)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹4,999</span>
+                <span class="price-original">₹7,500</span>
+                <span class="discount-tag">33% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(4, 'Natural Ceylon Blue Sapphire Ring', 4999, 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card" data-category="kavach" data-price="699" data-rating="4.6" data-product-id="5">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-new">New</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(5, 'Mangal Dosh Nivaran Kavach')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=5" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop&q=80" alt="Mangal Kavach">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Sacred Kavach</span>
+              <h3 class="product-title"><a href="product.html?id=5">Mangal Dosh Nivaran Sacred Silver Kavach</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(78)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹699</span>
+                <span class="price-original">₹1,100</span>
+                <span class="discount-tag">36% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(5, 'Mangal Dosh Nivaran Sacred Silver Kavach', 699, 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card" data-category="kavach" data-price="899" data-rating="4.8" data-product-id="6">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-bestseller">High Protection</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(6, 'Panchmukhi Hanuman Kavach')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=6" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=80" alt="Hanuman Kavach">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Sacred Kavach</span>
+              <h3 class="product-title"><a href="product.html?id=6">Panchmukhi Hanuman Siddha Raksha Kavach</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(215)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹899</span>
+                <span class="price-original">₹1,400</span>
+                <span class="discount-tag">35% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(6, 'Panchmukhi Hanuman Siddha Raksha Kavach', 899, 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="product-card" data-category="yantra" data-price="1299" data-rating="4.7" data-product-id="7">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-sale">Wealth Blessings</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(7, 'Kuber Yantra 24K Gold Foil Framed')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=7" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=500&auto=format&fit=crop&q=80" alt="Kuber Yantra">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Energized Yantras</span>
+              <h3 class="product-title"><a href="product.html?id=7">Kuber Yantra 24K Gold Foil Framed (Temple Size)</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(112)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹1,299</span>
+                <span class="price-original">₹1,800</span>
+                <span class="discount-tag">28% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(7, 'Kuber Yantra 24K Gold Foil Framed', 1299, 'https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div class="product-card" data-category="rudraksha" data-price="2499" data-rating="4.9" data-product-id="8">
+            <div class="product-img-wrapper">
+              <span class="product-badge badge-premium">Special Siddha</span>
+              <button class="btn-wishlist" onclick="toggleWishlist(8, 'Navagraha Shanti Rudraksha Mala')"><i data-lucide="heart" style="width:18px;height:18px;"></i></button>
+              <a href="product.html?id=8" style="display:block;width:100%;height:100%;">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop&q=80" alt="Navagraha Mala">
+              </a>
+            </div>
+            <div class="product-info">
+              <span class="product-category">Rudraksha</span>
+              <h3 class="product-title"><a href="product.html?id=8">Navagraha Shanti Combinational Rudraksha Mala</a></h3>
+              <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(188)</span></div>
+              <div class="product-price-box">
+                <span class="price-current">₹2,499</span>
+                <span class="price-original">₹3,800</span>
+                <span class="discount-tag">34% OFF</span>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart(8, 'Navagraha Shanti Combinational Rudraksha Mala', 2499, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop&q=80')">
+                <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Divine Vedic Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <div class="logo-badge" style="width:44px;height:44px;">
+                <img src="uploads/logo.png" alt="Jyotish Kavach">
+              </div>
+              <div>
+                <div class="footer-logo-title">Jyotish Kavach</div>
+                <div class="footer-logo-sub">Your Destiny, Your Kavach</div>
+              </div>
+            </a>
+            <p>100% Certified authentic Vedic spiritual products and remedies backed by seasoned astrologers.</p>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/jyotishkavach" target="_blank" class="social-link"><i data-lucide="instagram"></i></a>
+              <a href="https://www.facebook.com/jyotishkavach.in/" target="_blank" class="social-link"><i data-lucide="facebook"></i></a>
+              <a href="https://wa.me/919876543210" target="_blank" class="social-link"><i data-lucide="message-circle"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="shop.html">Shop Catalog</a></li>
+              <li><a href="services.html">Consultations</a></li>
+              <li><a href="courses.html">Astrology Courses</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="shop.html?cat=kavach">Sacred Kavach</a></li>
+              <li><a href="shop.html?cat=rudraksha">Rudraksha Beads</a></li>
+              <li><a href="shop.html?cat=yantra">Divine Yantras</a></li>
+              <li><a href="shop.html?cat=gemstone">Ratnas & Gems</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Support</h4>
+            <p><i data-lucide="phone"></i> +91 98765 43210</p>
+            <p><i data-lucide="mail"></i> support@jyotishkavach.in</p>
+            <p><i data-lucide="map-pin"></i> New Delhi, India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Jyotish Kavach. All rights reserved.</p>
+        <p>Lab Authenticated • Pran Pratishtha Guaranteed</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919876543210?text=Namaste%20Jyotish%20Kavach,%20I%20need%20astrological%20guidance" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat with Acharya on WhatsApp">
+    <img src="uploads/whatsapp.png" alt="WhatsApp Chat" width="62" height="62">
+  </a>
+
+  <!-- Script Files -->
+  <script src="sound.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    function loadAndRenderShopProducts() {
+      let products = [];
+      try {
+        const raw = localStorage.getItem('jk_products');
+        if (raw) products = JSON.parse(raw);
+      } catch (e) {}
+
+      if (Array.isArray(products) && products.length > 0) {
+        const grid = document.getElementById('shopProductsGrid');
+        if (grid) {
+          grid.innerHTML = '';
+          products.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            const cat = (p.category || 'kavach').toLowerCase();
+            card.setAttribute('data-category', cat);
+            card.setAttribute('data-price', p.price || 499);
+            card.setAttribute('data-rating', p.rating || 4.8);
+
+            const badgeHtml = p.badge ? `<span class="product-badge badge-bestseller">${p.badge}</span>` : '';
+            const origPrice = Number(p.origPrice) || 0;
+            const currPrice = Number(p.price) || 0;
+            const origPriceHtml = origPrice > currPrice ? `<span class="price-original">₹${origPrice.toLocaleString('en-IN')}</span>` : '';
+            const discountPct = origPrice > currPrice ? Math.round(((origPrice - currPrice) / origPrice) * 100) : 0;
+            const discountHtml = discountPct > 0 ? `<span class="discount-tag">${discountPct}% OFF</span>` : '';
+            const safeName = (p.name || 'Sacred Item').replace(/'/g, "\\'");
+            const imgSrc = (p.image || 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=500').replace(/([?&])w=\d+/i, '$1w=500');
+            const safeImg = imgSrc.replace(/'/g, "\\'");
+
+            card.innerHTML = `
+              <div class="product-img-wrapper">
+                ${badgeHtml}
+                <button class="btn-wishlist" onclick="toggleWishlist(${p.id}, '${safeName}')" aria-label="Wishlist">
+                  <i data-lucide="heart" style="width:18px;height:18px;"></i>
+                </button>
+                <a href="product.html?id=${p.id}" style="display:block;width:100%;height:100%;">
+                  <img src="${imgSrc}" alt="${p.name || 'Sacred Remedy'}" loading="lazy">
+                </a>
+              </div>
+              <div class="product-info">
+                <div class="product-category">${(p.category || 'Remedy').toUpperCase()}</div>
+                <h3 class="product-title">
+                  <a href="product.html?id=${p.id}">${p.name}</a>
+                </h3>
+                <div class="product-rating">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-count">(${p.reviewsCount || 45})</span>
+                </div>
+                <div class="product-price-box">
+                  <span class="price-current">₹${currPrice.toLocaleString('en-IN')}</span>
+                  ${origPriceHtml}
+                  ${discountHtml}
+                </div>
+                <button class="btn-add-cart" onclick="addToCart(${p.id}, '${safeName}', ${currPrice}, '${safeImg}')">
+                  <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+          document.getElementById('productCountLabel').textContent = products.length;
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+      }
+    }
+
+    function filterCategory(cat) {
+      const cards = document.querySelectorAll('#shopProductsGrid .product-card');
+      let visible = 0;
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.getElementById('productCountLabel').textContent = visible;
+      document.getElementById('currentCategoryBreadcrumb').textContent = cat.toUpperCase();
+    }
+
+    function filterPrice(range) {
+      const cards = document.querySelectorAll('#shopProductsGrid .product-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const price = parseInt(card.getAttribute('data-price') || '0');
+        let match = false;
+        if (range === 'all') match = true;
+        else if (range === 'under-1000' && price < 1000) match = true;
+        else if (range === '1000-2500' && price >= 1000 && price <= 2500) match = true;
+        else if (range === 'above-2500' && price > 2500) match = true;
+
+        if (match) {
+          card.style.display = 'flex';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.getElementById('productCountLabel').textContent = visible;
+    }
+
+    function sortProducts(criteria) {
+      const grid = document.getElementById('shopProductsGrid');
+      const cards = Array.from(grid.querySelectorAll('.product-card'));
+      cards.sort((a, b) => {
+        const priceA = parseInt(a.getAttribute('data-price') || '0');
+        const priceB = parseInt(b.getAttribute('data-price') || '0');
+        const rateA = parseFloat(a.getAttribute('data-rating') || '0');
+        const rateB = parseFloat(b.getAttribute('data-rating') || '0');
+        if (criteria === 'price-low') return priceA - priceB;
+        if (criteria === 'price-high') return priceB - priceA;
+        if (criteria === 'rating') return rateB - rateA;
+        return 0;
+      });
+      cards.forEach(c => grid.appendChild(c));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadAndRenderShopProducts();
+
+      // Check URL parameters for direct category navigation or search
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('cat');
+      const searchParam = urlParams.get('search');
+
+      if (catParam) {
+        filterCategory(catParam);
+        const radio = document.querySelector(`input[name="catFilter"][value="${catParam}"]`);
+        if (radio) radio.checked = true;
+      }
+
+      if (searchParam) {
+        const cards = document.querySelectorAll('#shopProductsGrid .product-card');
+        let visible = 0;
+        cards.forEach(c => {
+          if (c.innerText.toLowerCase().includes(searchParam.toLowerCase())) {
+            c.style.display = 'flex';
+            visible++;
+          } else {
+            c.style.display = 'none';
+          }
+        });
+        document.getElementById('productCountLabel').textContent = visible;
+      }
+    });
+  </script>
+</body>
+</html>
